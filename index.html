@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <h2>MyZap</h2>
@@ -29,10 +29,19 @@
       const username = $('#username').val();
       const password = $('#password').val();
 
-      // Verifique as credenciais do usuário (simplificado para fins educacionais)
-      if (username === 'cartorio' && password === 'Superlegal') {
-        // Se as credenciais forem válidas, redirecione para a sala de chat
-        window.location.href = './zap/public/index.html';
+      // Array of valid credentials
+      const validCredentials = [
+        { username: 'tiago', password: '1234' },
+        { username: 'julia', password: '1254' },
+        // Add more credentials as needed
+      ];
+
+      // Check if entered credentials match any valid credentials
+      const isValid = validCredentials.some(cred => cred.username === username && cred.password === password);
+
+      if (isValid) {
+        // If the credentials are valid, redirect to the chat room with the selected username
+        window.location.href = `../myzap/public/index.html`;
       } else {
         alert('Credenciais inválidas. Tente novamente.');
       }
@@ -40,3 +49,4 @@
   </script>
 </body>
 </html>
+
