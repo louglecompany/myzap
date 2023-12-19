@@ -41,7 +41,7 @@ $('#loginForm').submit(function(event) {
     // Verifique as credenciais do usuário (simplificado para fins educacionais)
     if (username === 'cartorio' && password === 'Superlegal') {
       // Se as credenciais forem válidas, redirecione para a sala de chat
-      window.location.href = './zap/imdex.html';
+      window.location.href = './zap/public/imdex.html';
     } else {
       alert('Credenciais inválidas. Tente novamente.');
     }
