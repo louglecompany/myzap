@@ -1,52 +1,31 @@
-<!-- public/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loogle</title>
+    <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
-  <h2>MyZap</h2>
-  <form id="loginForm">
-    <label for="username">Usuário:</label>
-    <input type="text" id="username" name="username" required><br>
 
-    <label for="password">Senha:</label>
-    <input type="password" id="password" name="password" required><br>
+    <header>
+    <div class="tex">
+      MyZap
+    </div>
+    </header>
 
-    <button type="submit">Entrar</button>
-  </form>
+<main>
+    <div class="center-content">
+        <ul class="menu-links">
+            <li><a href="../senha/index.html">Bora começar</a></li>
+        </ul>
+    </div>
+</main>
+    
+    <footer>
+        <!-- Conteúdo do rodapé aqui (se houver) -->
+    </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script>
-    const socket = io();
-
-    $('#loginForm').submit(function(event) {
-      event.preventDefault();
-      const username = $('#username').val();
-      const password = $('#password').val();
-
-      // Array of valid credentials
-      const validCredentials = [
-        { username: 'tiago', password: '1234' },
-        { username: 'julia', password: '1254' },
-        // Add more credentials as needed
-      ];
-
-      // Check if entered credentials match any valid credentials
-      const isValid = validCredentials.some(cred => cred.username === username && cred.password === password);
-
-      if (isValid) {
-        // If the credentials are valid, redirect to the chat room with the selected username
-        window.location.href = `./zap/public/index.html`;
-      } else {
-        alert('Credenciais inválidas. Tente novamente.');
-      }
-    });
-  </script>
 </body>
 </html>
-
