@@ -91,6 +91,40 @@ document.addEventListener('DOMContentLoaded', () => {
         messageElement.textContent = `${message.user}: ${message.text}`;
         messagesContainer.appendChild(messageElement);
       });
+
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+  const loginForm = document.getElementById('login-form');
+  const chatContainer = document.querySelector('.chat-container');
+  const usernameInput = document.getElementById('username');
+  const passwordInput = document.getElementById('password');
+
+  const users = [
+    { username: 'tiago', password: 'senha123' },
+    { username: 'fabiana', password: 'senha456' },
+    { username: 'renata', password: 'senha789' }
+    // Adiciona mais usuários com nome de usuário e senha
+  ];
+
+  loginForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const enteredUsername = usernameInput.value.toLowerCase();
+    const enteredPassword = passwordInput.value;
+
+    const foundUser = users.find(user => user.username === enteredUsername && user.password === enteredPassword);
+
+    if (foundUser) {
+      // Login bem-sucedido, mostra a área do chat e oculta o formulário de login
+      chatContainer.style.display = 'block';
+      document.querySelector('.login-container').style.display = 'none';
+      // Aqui podes adicionar lógica adicional para exibir o chat para o usuário logado
+    } else {
+      alert('Nome de usuário ou senha incorretos. Tente novamente.');
+    }
+  });
+});
+
     }
   
     // Renderizar mensagens quando a página carregar
