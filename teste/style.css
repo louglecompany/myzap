@@ -7,7 +7,7 @@ body, h1, h2, p, ul, li {
   /* Estilo global da página */
   body {
     font-family: 'Arial', sans-serif;
-    background-color: #333;
+    background-color: #ffffff;
     color: #333;
     line-height: 1.6;
     height: 240vh;
@@ -52,11 +52,11 @@ body, h1, h2, p, ul, li {
   .user-list {
     top: 15px;
     float: left;
-    width: 18%;
-    left: 18%;
+    width: 20%;
+    left: 16%;
     position: absolute;
     height: 234.5vh;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(241, 241, 241);
     border-radius: 5px;
   }
   
@@ -72,13 +72,19 @@ body, h1, h2, p, ul, li {
     font-size: 15px;
     border: 1px solid #fa0000;
     margin-bottom: 10px;
-    width: 50%;
+    width: 75%;
+    margin-left: 20px;
   }
 
+  .user.logged-in {
+    border-color: rgb(0, 0, 0);
+    background-color: rgba(0, 199, 0, 0.571);
+}
+
   .super {
-    padding: 10px;
-    margin: 5px;
-    background-color: #520000d2;
+    padding: 2px;
+    margin: 0px;
+    background-color:  rgba(133, 0, 0, 0.721);
     border-radius: 3px;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -87,6 +93,11 @@ body, h1, h2, p, ul, li {
     margin-top: 20px;
     font-size: 20px;
     border: 1px solid #520000d2;
+    width: 76%;
+    margin-left:20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
   }
 
   .super:hover{
@@ -105,7 +116,7 @@ body, h1, h2, p, ul, li {
     width: 63%;
     position: fixed;
     right: 7px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(227, 227, 227);
     border-radius: 5px;
   }
   
@@ -116,7 +127,7 @@ body, h1, h2, p, ul, li {
     border-top-left-radius: 5px solid black;
     border-top-right-radius: 5px solid black;
     border: 1px solid black;
-    font-size: 18px;
+    font-size: 25px;
     border-radius: 5px;
   }
   
@@ -127,7 +138,7 @@ body, h1, h2, p, ul, li {
     padding: 10px;
     border: 1px solid #000000;
     border-radius: 3px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(227, 227, 227);
     border-radius: 5px;
 
   }
