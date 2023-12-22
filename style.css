@@ -127,8 +127,12 @@ header {
     justify-content: center;
     align-items: center;
 }
-
+@media screen and (min-width: 1300px) and (max-width: 1400px) {
 /* Media query para telas menores (por exemplo, dispositivos móveis) */
+header {
+font-size:100px;
+}
+}
 @media (max-width: 600px) {
     /* Faça alterações de estilo específicas para telas menores aqui */
     body {
