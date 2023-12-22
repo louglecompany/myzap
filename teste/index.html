@@ -19,39 +19,128 @@
 
       <div class="super" data-userid="Registro">Registro</div>
 
-      <div class="user" data-userid="Ryllary">Ryllary</div>
-      <div class="user" data-userid="Ana">Ana</div>
-      <div class="user" data-userid="Adriane">Adriane</div>
-      <div class="user" data-userid="Tiago">Tiago</div>
-      <div class="user" data-userid="Jessica">Jessica</div>
-      <div class="user" data-userid="Elizabeti">Elizabeti</div>
-      <div class="user" data-userid="Carolina">Carolina</div>
-      <div class="user" data-userid="Miguel">Miguel</div>
-
+      <div class="user" data-userid="ryllary">Ryllary</div>
+      <div class="user" data-userid="ana">Ana</div>
+      <div class="user" data-userid="adriane">Adriane</div>
+      <div class="user" data-userid="tiago">Tiago</div>
+      <div class="user" data-userid="jessica">Jessica</div>
+      <div class="user" data-userid="elizabeti">Elizabeti</div>
+      <div class="user" data-userid="carolina">Carolina</div>
+      <div class="user" data-userid="miguel">Miguel</div>
       <div class="super" data-userid="Finalização">Finalização</div>
 
-      <div class="user" data-userid="Ryllary">Izabeli</div>
-      <div class="user" data-userid="Ana">Camila C</div>
+      <div class="user" data-userid="izabeli">Izabeli</div>
+      <div class="user" data-userid="camilac">Camila C</div>
 
 
       
       <div class="super" data-userid="Adm">Adm</div>
 
-      <div class="user" data-userid="Fabiana">Fabiana</div>
-      <div class="user" data-userid="Renata">Renata</div>
-      <div class="user" data-userid="Horrana">Horrana</div>
-      <div class="user" data-userid="Angelo">Angelo</div>
+      <div class="user" data-userid="fabiana">Fabiana</div>
+      <div class="user" data-userid="renata">Renata</div>
+      <div class="user" data-userid="horrana">Horrana</div>
+      <div class="user" data-userid="angelo">Angelo</div>
+
+      <div class="super" data-userid="Qualificação">Qualificação</div>
+
+      <div class="user" data-userid="katia">Katia</div>
+      <div class="user" data-userid="thais">Thais</div>
+      <div class="user" data-userid="camila">Camila R</div>
+      <div class="user" data-userid="fernanda">Fernanda</div>
+      <div class="user" data-userid="andressa">Andressa</div>
+      <div class="user" data-userid="grazieli">Grazieli</div>
+      <div class="user" data-userid="venicius">Venicius</div>
+      <div class="user" data-userid="andreia">Andreia</div>
+
+      <div class="super" data-userid="Certidão">Certidão</div>
+
+      <div class="user" data-userid="anam">Ana M</div>
+      <div class="user" data-userid="larissa">Larissa</div>
+      <div class="user" data-userid="leticia">Leticia</div>
+      <div class="user" data-userid="janaina">Janaina</div>
+
+      <div class="super" data-userid="Usucapião">Usucapião</div>
+
+      <div class="user" data-userid="renan">Renan</div>
+      <div class="user" data-userid="franciele">Franciele</div>
+
+      <div class="super" data-userid="Recepção">Recepção</div>
+
+      <div class="user" data-userid="anaelen">Anaelen</div>
+      <div class="user" data-userid="kethelin">kethelin</div>
+      <div class="user" data-userid="sirlene">Sirlene</div>
+      <div class="user" data-userid="michele">Michele</div>
+      <div class="user" data-userid="marilize">Marilize</div>
+      <div class="user" data-userid="fantasma">Fantasma - A</div>
+      <div class="user" data-userid="fantasmab">Fantasma - B</div>
+
+
+
 
     </div>
     <div class="chat">
       <div class="chat-header" id="chat-header">Selecione um usuário para começar a conversar</div>
       <div class="messages" id="messages"></div>
       <div class="input-box">
-        <input type="text" id="message-input" placeholder="Digite sua mensagem...">
-        <button id="k" onclick="sendMessage()">Enviar</button>
+        <input type="text" id="message-input" placeholder="Digite sua mensagem..." onkeydown="handleKeyDown(event)">
+        <button id="emoji-button">😀</button>
+        <label for="file-input" class="file-label">
+          <span>Arquivo</span>
+          <input type="file" id="file-input" style="display: none;" onchange="handleFileSelect(event)">
+        </label>
       </div>
     </div>
-  </div>
+
+    <script>
+      document.getElementById("message-input").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          sendMessage();
+        }
+      });
+    
+      function sendMessage() {
+        var messageInput = document.getElementById("message-input");
+        var messageText = messageInput.value;
+    
+        if (messageText.trim() !== "") {
+          var messagesDiv = document.getElementById("messages");
+          var newMessageDiv = document.createElement("div");
+          newMessageDiv.textContent = messageText;
+          messagesDiv.appendChild(newMessageDiv);
+    
+          messageInput.value = "";
+        }
+      }
+    
+      function handleFileSelect(event) {
+        var files = event.target.files;
+        if (files.length > 0) {
+          var fileName = files[0].name;
+          // Aqui você pode adicionar lógica para lidar com o arquivo selecionado
+          console.log("Arquivo selecionado: " + fileName);
+        }
+      }
+    </script>
+    
+    
+    
+    <!-- Modal de emojis -->
+    <div id="emoji-modal" class="modal">
+      <div class="modal-content">
+        <!-- Adicione emojis ou uma biblioteca de emojis aqui -->
+        <button onclick="insertEmoji('😀')">😀</button>
+        <button onclick="insertEmoji('😃')">😃</button>
+        <button onclick="insertEmoji('😄')">😄</button>
+        <!-- Adicione mais emojis conforme necessário -->
+  
+        <span class="close" onclick="closeModal()">&times;</span>
+      </div>
+    </div>
+    
+  <!-- Adicione o seletor de emojis (emoji-picker) -->
+  <emoji-picker></emoji-picker>
+
   <script src="script.js"></script>
 </body>
 </html>
