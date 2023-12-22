@@ -7,30 +7,52 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div class="login-container">
-    <form id="login-form">
-      <input type="text" id="username" placeholder="Nome de usuário">
-      <input type="password" id="password" placeholder="Senha">
-      <button type="submit">Login</button>
-    </form>
+  <div class="login-container" id="login-container">
+    <h2>Login</h2>
+    <input type="text" id="username-input" placeholder="Username">
+    <input type="password" id="password-input" placeholder="Password"> <!-- Adicionando campo de senha -->
+    <button onclick="login()">Login</button>
   </div>
-  
-  <div class="chat-container" style="display: none;">
+
+  <div class="chat-container" id="chat-container" style="display:none;">
     <div class="user-list" id="user-list">
-      <div class="user" data-userid="user1">Tiago</div>
-      <div class="user" data-userid="user2">Fabiana</div>
-      <div class="user" data-userid="user3">Renata</div>
+
+      <div class="super" data-userid="Registro">Registro</div>
+
+      <div class="user" data-userid="Ryllary">Ryllary</div>
+      <div class="user" data-userid="Ana">Ana</div>
+      <div class="user" data-userid="Adriane">Adriane</div>
+      <div class="user" data-userid="Tiago">Tiago</div>
+      <div class="user" data-userid="Jessica">Jessica</div>
+      <div class="user" data-userid="Elizabeti">Elizabeti</div>
+      <div class="user" data-userid="Carolina">Carolina</div>
+      <div class="user" data-userid="Miguel">Miguel</div>
+
+      <div class="super" data-userid="Finalização">Finalização</div>
+
+      <div class="user" data-userid="Ryllary">Izabeli</div>
+      <div class="user" data-userid="Ana">Camila C</div>
+
+
+      
+      <div class="super" data-userid="Adm">Adm</div>
+
+      <div class="user" data-userid="Fabiana">Fabiana</div>
+      <div class="user" data-userid="Renata">Renata</div>
+      <div class="user" data-userid="Horrana">Horrana</div>
+      <div class="user" data-userid="Angelo">Angelo</div>
+
     </div>
     <div class="chat">
       <div class="chat-header" id="chat-header">Selecione um usuário para começar a conversar</div>
       <div class="messages" id="messages"></div>
       <div class="input-box">
         <input type="text" id="message-input" placeholder="Digite sua mensagem...">
-        <button onclick="sendMessage()">Enviar</button>
+        <button id="k" onclick="sendMessage()">Enviar</button>
       </div>
     </div>
   </div>
   <script src="script.js"></script>
 </body>
 </html>
+
