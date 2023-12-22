@@ -13,9 +13,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Simulando usuários e senhas
     const users = [
-        { username: 'Tiago', password: 'tiago123' },
-        { username: 'Jessica', password: 'jessica123' },
-        { username: 'Ana', password: 'ana123' }
+
+        { username: 'tiago', password: 'tiago123@' },
+        { username: 'jessica', password: 'jessica123@' },
+        { username: 'ana', password: 'ana123@' },
+        { username: 'adriane', password: 'adriane123@' },
+        { username: 'elizabeti', password: 'elizabeti123@' },
+        { username: 'carolina', password: 'carolina123@' },
+        { username: 'ryllary', password: 'ryllary123@' },
+        { username: 'miguel', password: 'miguel123@' },
+
+        { username: 'izabeli', password: 'Izabeli123@' },
+        { username: 'camilac', password: 'camilac123@' },
+
+        { username: 'fabiana', password: 'fabiana123@' },
+        { username: 'horrana', password: 'horrana123@' },
+        { username: 'renata', password: 'reanata123@' },
+        { username: 'angelo', password: 'angelo123@' },
+
+        { username: 'leticia', password: 'leticia123@' },
+        { username: 'larissa', password: 'larissa123@' },
+        { username: 'janaina', password: 'janaina123@' },
+        { username: 'anam', password: 'anam123@' },
+
+        { username: 'katia', password: 'katia123@' },
+        { username: 'camila', password: 'camila123@' },
+        { username: 'andreia', password: 'andreia123@' },
+        { username: 'andressa', password: 'andressa123@' },
+        { username: 'venicius', password: 'venicius123@' },
+        { username: 'thais', password: 'thais123@' },
+        { username: 'grazieli', password: 'grazieli123@' },
+        { username: 'fernanda', password: 'fernanda123@' },
+
+        { username: 'renan', password: 'Renan123@' },
+        { username: 'franciele', password: 'franciele123@' },
+
+        { username: 'michele', password: 'michele123@' },
+        { username: 'sirlene', password: 'sirlene123@' },
+        { username: 'anaelen', password: 'anaelen123@' },
+        { username: 'kethelin', password: 'kethelin123@' },
+        { username: 'marilize', password: 'marilize123@' },
+        { username: 'fantasma', password: 'fantasma123@' },
+        { username: 'fantasmab', password: 'fantasmab123@' }
     ];
 
     // Adicionando eventos de clique para usuários
@@ -120,3 +159,24 @@ function renderMessages() {
 // Renderizar mensagens quando a página carregar
 renderMessages();
 });
+
+// Adicione essas funções no seu script.js
+
+document.getElementById('emoji-button').addEventListener('click', () => {
+    // Exiba o modal de emojis quando o botão for clicado
+    document.getElementById('emoji-modal').style.display = 'block';
+  });
+  
+  function closeModal() {
+    // Feche o modal de emojis quando o botão "X" for clicado
+    document.getElementById('emoji-modal').style.display = 'none';
+  }
+  
+  function insertEmoji(emoji) {
+    // Insira o emoji selecionado no campo de entrada
+    const messageInput = document.getElementById('message-input');
+    messageInput.value += emoji;
+  
+    // Feche o modal de emojis
+    closeModal();
+  }
