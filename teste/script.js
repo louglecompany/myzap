@@ -66,25 +66,38 @@ document.addEventListener('DOMContentLoaded', () => {
             renderMessages();
         });
 
-    // Função para efetuar login
-    window.login = function () {
-        const username = usernameInput.value.trim();
-        const password = passwordInput.value.trim();
+// ... (seu código existente)
 
-        // Verificando se o usuário e senha correspondem
-        const user = users.find(u => u.username === username && u.password === password);
+// Função para efetuar login
+window.login = function () {
+    const username = usernameInput.value.trim();
+    const password = passwordInput.value.trim();
 
-        if (user) {
-            currentUser = username;
-            loginContainer.style.display = 'none';
-            chatContainer.style.display = 'block';
-        } else {
-            alert('Usuário ou senha incorretos. Tente novamente.');
-        }
-    };
+    // Verificando se o usuário e senha correspondem
+    const user = users.find(u => u.username === username && u.password === password);
 
-    // Restante do código permanece inalterado
-    // ...
+    if (user) {
+        currentUser = username;
+
+        // Remove a classe 'logged-in' de todos os elementos de usuário
+        const userElements = document.querySelectorAll('.user');
+        userElements.forEach(userElement => {
+            userElement.classList.remove('logged-in');
+        });
+
+        // Adiciona a classe 'logged-in' apenas ao elemento do usuário que fez login
+        const userElement = document.querySelector(`[data-userid="${username}"]`);
+        userElement.classList.add('logged-in');
+
+        loginContainer.style.display = 'none';
+        chatContainer.style.display = 'block';
+    } else {
+        alert('Usuário ou senha incorretos. Tente novamente.');
+    }
+};
+
+// ... (seu código existente)
+
 });
 
   
